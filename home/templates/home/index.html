@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}INDEX DISSO AQUI{% endblock %}
 {% block main %}
 <body class="landing-page sidebar-collapse">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="150">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
@@ -15,7 +16,7 @@
           <span class="navbar-toggler-bar bottom-bar"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{% static 'home/assets/img/blurred-image-1.jpg' %}">
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{% static 'assets/img/blurred-image-1.jpg' %}">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
@@ -68,11 +69,11 @@
   <!-- End Navbar -->
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" style="background-image:url({% static 'home/assets/img/header.jpg' %});">
+      <div class="page-header-image" id="sofia" data-parallax="true" style="background-image:url({% static 'assets/img/sofia01.jpg' %});">
       </div>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="{% static 'home/assets/img/now-logo.png' %}" alt="">
+          <img class="n-logo" src="{% static 'assets/img/now-logo.png' %}" alt="">
           <h1 class="h1-seo">Now UI Kit.</h1>
           <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
         </div>
@@ -91,14 +92,14 @@
           <div class="row">
             <div class="col-md-12">
               <div class="hero-images-container">
-                <img src="{% static 'home/assets/img/hero-image-1.png' %}" alt="">
+                <img src="{% static 'assets/img/sofia02.jpg' %}" alt="">
               </div>
-              <div class="hero-images-container-1">
-                <img src="{% static 'home/assets/img/hero-image-2.png' %}" alt="">
-              </div>
-              <div class="hero-images-container-2">
-                <img src="{% static 'home/assets/img/hero-image-3.png' %}" alt="">
-              </div>
+<!--              <div class="hero-images-container">-->
+<!--                <img src="{% static 'assets/img/sofia03.jpg' %}" alt="">-->
+<!--              </div>-->
+<!--              <div class="hero-images-container">-->
+<!--                <img src="{% static 'assets/img/sofia04.jpg' %}" alt="">-->
+<!--              </div>-->
             </div>
           </div>
         </div>
@@ -353,7 +354,7 @@
           <h4>Navigation</h4>
         </div>
         <div id="navbar">
-          <div class="navigation-example" style="background-image:url({% static 'home/assets/img/bg7.jpg' %})">
+          <div class="navigation-example" style="background-image:url({% static 'assets/img/bg7.jpg' %})">
             <!-- Navbar Primary  -->
             <nav class="navbar navbar-expand-lg bg-primary">
               <div class="container">
@@ -924,19 +925,19 @@
             <div class="row">
               <div class="col-sm-2">
                 <p class="category">Image</p>
-                <img src="{% static 'home/assets/img/julie.jpg' %}" alt="Rounded Image" class="rounded">
+                <img src="{% static 'assets/img/julie.jpg' %}" alt="Rounded Image" class="rounded">
               </div>
               <div class="col-sm-2">
                 <p class="category">Circle Image</p>
-                <img src="{% static 'home/assets/img/julie.jpg' %}" alt="Circle Image" class="rounded-circle">
+                <img src="{% static 'assets/img/julie.jpg' %}" alt="Circle Image" class="rounded-circle">
               </div>
               <div class="col-sm-2">
                 <p class="category">Raised</p>
-                <img src="{% static 'home/assets/img/julie.jpg' %}" alt="Raised Image" class="rounded img-raised">
+                <img src="{% static 'assets/img/julie.jpg' %}" alt="Raised Image" class="rounded img-raised">
               </div>
               <div class="col-sm-2">
                 <p class="category">Circle Raised</p>
-                <img src="{% static 'home/assets/img/julie.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-raised">
+                <img src="{% static 'assets/img/julie.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-raised">
               </div>
             </div>
           </div>
@@ -1012,19 +1013,19 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
-                    <img class="d-block" src="{% static 'home/assets/img/bg1.jpg' %}" alt="First slide">
+                    <img class="d-block" src="{% static 'assets/img/bg1.jpg' %}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Nature, United States</h5>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block" src="{% static 'home/assets/img/bg3.jpg' %}" alt="Second slide">
+                    <img class="d-block" src="{% static 'assets/img/bg3.jpg' %}" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Somewhere Beyond, United States</h5>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block" src="{% static 'home/assets/img/bg4.jpg' %}" alt="Third slide">
+                    <img class="d-block" src="{% static 'assets/img/bg4.jpg' %}" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Yellowstone National Park, United States</h5>
                     </div>
@@ -1087,7 +1088,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-signup" style="background-image: url({% static 'home/assets/img/bg11.jpg' %}); background-size: cover; background-position: top center; min-height: 700px;">
+      <div class="section section-signup" style="background-image: url({% static 'assets/img/bg11.jpg' %}); background-size: cover; background-position: top center; min-height: 700px;">
         <div class="container">
           <div class="row">
             <div class="card card-signup" data-background-color="orange">
@@ -1156,13 +1157,13 @@
           <div class="row">
             <div class="col">
               <a href="examples/landing-page.html" target="_blank">
-                <img src="{% static 'home/assets/img/landing.jpg' %}" alt="Image" class="img-raised">
+                <img src="{% static 'assets/img/landing.jpg' %}" alt="Image" class="img-raised">
               </a>
               <a href="examples/landing-page.html" class="btn btn-outline-default btn-primary btn-round">View Landing Page</a>
             </div>
             <div class="col">
               <a href="e{% url 'home:profile' %}" target="_blank">
-                <img src="{% static 'home/assets/img/profile.jpg' %}" alt="Image" class="img-raised">
+                <img src="{% static 'assets/img/profile.jpg' %}" alt="Image" class="img-raised">
               </a>
               <a href="{% url 'home:profile' %}" class="btn btn-outline-default btn-primary btn-round">View Profile Page</a>
             </div>
