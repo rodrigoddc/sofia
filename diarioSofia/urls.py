@@ -23,5 +23,5 @@ from home import urls as home_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include(home_urls)),
+    path('', include(home_urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

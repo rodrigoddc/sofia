@@ -1680,7 +1680,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-  background-color: #f96332;
+  background-color: #cc00dd;
   color: #FFFFFF;
 }
 
@@ -2161,7 +2161,7 @@ fieldset[disabled] .btn-danger.active {
 
 .btn-neutral {
   background-color: #FFFFFF;
-  color: #f96332;
+  color: #cc00dd;
 }
 
 .btn-neutral:hover,
@@ -3615,7 +3615,7 @@ p {
 }
 
 .text-primary {
-  color: #f96332 !important;
+  color: #cc00dd !important;
 }
 
 .text-info {
@@ -4681,7 +4681,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .bg-primary {
-  background-color: #f96332 !important;
+  background-color: #cc00dd !important;
 }
 
 .bg-info {
@@ -5517,7 +5517,11 @@ img {
 }
 
 .card[data-background-color="yellow"] {
-  background-color: #FFB236;
+  background-color: #a58900;
+}
+
+.card[data-background-color="pink"] {
+  background-color: #cc00dd;
 }
 
 .card[data-background-color="blue"] {
@@ -6012,7 +6016,7 @@ img {
 .page-header .page-header-image {
   position: absolute;
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -6043,7 +6047,6 @@ img {
   height: 100%;
   z-index: 1;
   text-align: center;
-  position: relative;
 }
 
 .page-header .category,
@@ -6078,6 +6081,32 @@ img {
   background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+  /* Standard syntax */
+}
+
+.clear-filter[filter-color="yellow"] {
+  background: rgba(44, 44, 44, 0.2);
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(212, 176, 0, 0.6));
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(212, 176, 0, 0.6));
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(212, 176, 0, 0.6));
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(212, 176, 0, 0.6));
+  /* Standard syntax */
+}
+
+.clear-filter[filter-color="pink"] {
+  background: rgba(44, 44, 44, 0.2);
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(189, 0, 212, 0.6));
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(189, 0, 212, 0.6));
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(189, 0, 212, 0.6));
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(189, 0, 212, 0.6));
   /* Standard syntax */
 }
 
@@ -6506,13 +6535,13 @@ img {
   .sidebar-collapse .navbar-collapse:before {
     background: #f96332;
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#f96332 0%, #000 80%);
+    background: -webkit-linear-gradient(#cc00dd 0%, #000 80%);
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#f96332 0%, #000 80%);
+    background: -o-linear-gradient(#cc00dd 0%, #000 80%);
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#f96332 0%, #000 80%);
+    background: -moz-linear-gradient(#cc00dd 0%, #000 80%);
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#f96332 0%, #000 80%);
+    background: linear-gradient(#cc00dd 0%, #000 80%);
     /* Standard syntax (must be last) */
     opacity: 0.76;
     filter: alpha(opacity=76);
