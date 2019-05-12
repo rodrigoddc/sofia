@@ -20,8 +20,8 @@ from django.conf import settings
 from home import urls as home_urls
 
 
-
+apps_name = 'diarioSofia'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(home_urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
