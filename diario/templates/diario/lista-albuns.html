@@ -1,0 +1,60 @@
+{% extends 'base-ui.html' %}
+{% load static %}
+{% block title %} Álbuns {% endblock %}
+{% block main %}
+<link type="javascript/js" href="{% static 'js/lightbox.js' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+<link rel="stylesheet" href="{% static 'css/compact-gallery.css' %}">
+<div class="wrapper">
+    <div class="page-header clear-filter" filter-color="pink">
+        <div class="page-header-image" id="sofia" data-parallax="true"
+             style="background-image:url({% static 'assets/img/sofia/photo_2018-05-13_11-32-17.jpg' %});">
+        </div>
+        <div class="container">
+            <div class="content-center brand">
+                <h1 class="title">Sofia</h1>
+                <h4 class="">Filha amada da mamãe Gabriela</h4>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <!-- Section Lightbox -->
+        <section class="gallery-block compact-gallery">
+            <div class="container">
+                <div class="form-group pt-2">
+                    <span class="h2 d-flex justify-content-center">Lista de Álbuns</span>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Título</th>
+                            <th scope="col">Mês</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for album in albuns %}
+                        <tr>
+                            <td><a href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo}}</a></td>
+                            <td>{{ album.mes}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+    </div>
+</div>
+</section>
+
+<!-- end LIght box -->
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+    </script>
+{% endblock %}
