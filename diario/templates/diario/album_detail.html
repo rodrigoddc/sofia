@@ -22,17 +22,14 @@
         <section class="gallery-block compact-gallery">
             <div class="container">
                 <h2 class="h2"> {{ object.titulo }}</h2><br>
-                <p>Mes: {{ object.mes }}</p>
+                <h3>{{ object.get_mes_display }}</h3>
 
-                <h5>Imagens</h5>
-                {% for imagem in imagens %}
-                <p>Imagem id: {{ imagem.id }}</p>
-                <p>Imagem titulo: {{ imagem.titulo }}</p>
-                <p>Imagem descricao: {{ imagem.descricao }}</p>
-                <p>Imagem descricao: {{ imagem.imagem }}</p>
+                {% for imagem in imagens.all %}
+                    <p>Título: {{ imagem.titulo }}</p>
+                    <p>Descricao: {{ imagem.descricao }}</p>
+                    <img src="{{ imagem.imagem.url }}">
+                {% endfor %}
             </div>
-
-
     </div>
 </div>
 </section>

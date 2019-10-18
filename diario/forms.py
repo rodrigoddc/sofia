@@ -1,5 +1,5 @@
 from django import forms
-from diario.models import Imagem
+from .models import Imagem
 
 
 class ImagemForm(forms.Form):

@@ -12,8 +12,12 @@
         </div>
         <div class="container">
             <div class="content-center brand">
-                <h1 class="title">Sofia</h1>
-                <h4 class="">Filha amada da mamãe Gabriela</h4>
+                {% if user.is_authenticated %}
+                    <h1 class="title">Sofia</h1>
+                    <h4 class="">Filha amada da mamãe {{ user.username }} </h4>
+                {% else %}
+                    <span class="text-white h2">Registre-se para obter essa função!</span>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -23,30 +27,33 @@
             <div class="container">
                 <div class="form-group pt-2">
                     <span class="h2 d-flex justify-content-center">Lista de Álbuns</span>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Título</th>
-                            <th scope="col">Mês</th>
-                        </tr>
-                        </thead>
+                    {% if user.is_authenticated %}
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Título</th>
+                                <th scope="col">Mês</th>
+                            </tr>
+                            </thead>
 
-                        <tbody>
-                        {% for album in albuns %}
-                        <tr>
-                            <td><a href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo}}</a></td>
-                            <td>{{ album.mes}}</td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                            <tbody>
+
+                            {% for album in albuns %}
+                            <tr>
+                                <td><a href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo }}</a></td>
+                                <td>{{ album.mes }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                            {% endfor %}
+                    {% else %}
+                        <span class="text-danger h4">*Efetue o loggin para vizualizar seus os álbuns</span>
+                    {% endif %}
                 </div>
             </div>
-
-
+        </section>
     </div>
 </div>
-</section>
 
 <!-- end LIght box -->
 </div>

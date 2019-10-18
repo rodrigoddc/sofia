@@ -1,13 +1,5 @@
 from django.db import models
-
-
-class Imagem(models.Model):
-    titulo = models.CharField(max_length=100, default='titulo')
-    descricao = models.CharField(max_length=300, default='descricao')
-    imagem = models.ImageField(upload_to='imagens_album', null=True, blank=True)
-
-    def __str__(self):
-        return self.titulo
+from django.contrib.auth import get_user_model
 
 
 class Album(models.Model):
@@ -40,19 +32,37 @@ class Album(models.Model):
     )
 
     mes = models.CharField(choices=MESES, default=JANEIRO, max_length=3)
-    titulo = models.CharField(max_length=100, default='titulo')
-    descricao = models.CharField(max_length=300, default='descricao')
+    titulo = models.CharField(max_length=100, null=False, blank=False)
+    descricao = models.CharField(max_length=300, null=False, blank=False)
+    usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
+    verbose_name_plural = 'Álbuns'
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            # the object is being created, so set the user
+            obj.usuario = request.user
+        obj.save()
 
     def __str__(self):
         return self.titulo
 
 
-class ImagemAlbum(models.Model):
-    imagens = models.ForeignKey(Imagem, on_delete=models.CASCADE)
+class Imagem(models.Model):
+    titulo = models.CharField(max_length=100, null=False, blank=False)
+    descricao = models.CharField(max_length=300, null=False, blank=False)
+    imagem = models.ImageField(upload_to='imagens_album', null=True, blank=True)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
+
+    verbose_name_plural = 'Imagens'
+
+    def __str__(self):
+        return self.titulo
 
 
 class Diario(models.Model):
+    titulo = models.CharField(max_length=100, default='titulo')
     album = models.ForeignKey(Album, null=True, related_name='+', on_delete=models.CASCADE)
 
-    pass
+    def __str__(self):
+        return self.titulo

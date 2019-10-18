@@ -18,10 +18,13 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from home import urls as home_urls
+from diario import urls as diario_urls
 
 
 apps_name = 'diarioSofia'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(home_urls)),
+    path('', include(diario_urls)),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
