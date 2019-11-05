@@ -13,10 +13,10 @@
         <div class="container">
             <div class="content-center brand">
                 {% if user.is_authenticated %}
-                    <h1 class="title">Sofia</h1>
-                    <h4 class="">Filha amada da mamãe {{ user.username }} </h4>
+                <h1 class="title">Sofia</h1>
+                <h4 class="">Filha amada da mamãe {{ user.username }} </h4>
                 {% else %}
-                    <span class="text-white h2">Registre-se para obter essa função!</span>
+                <span class="text-white h2">Registre-se para obter essa função!</span>
                 {% endif %}
             </div>
         </div>
@@ -28,6 +28,8 @@
                 <div class="form-group pt-2">
                     <span class="h2 d-flex justify-content-center">Lista de Álbuns</span>
                     {% if user.is_authenticated %}
+                        {% if albuns %}
+
                         <table class="table">
                             <thead>
                             <tr>
@@ -37,17 +39,19 @@
                             </thead>
 
                             <tbody>
-
                             {% for album in albuns %}
                             <tr>
                                 <td><a href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo }}</a></td>
                                 <td>{{ album.mes }}</td>
                             </tr>
+                            {% endfor %}
                             </tbody>
                         </table>
-                            {% endfor %}
+                        {% else %}
+                        <p class="h3">Nao existem albuns para exibiçao</p>
+                        {% endif %}
                     {% else %}
-                        <span class="text-danger h4">*Efetue o loggin para vizualizar seus os álbuns</span>
+                    <span class="text-danger h4">*Efetue o loggin para vizualizar seus os álbuns</span>
                     {% endif %}
                 </div>
             </div>
