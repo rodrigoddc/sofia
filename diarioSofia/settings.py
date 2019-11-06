@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'home',
     'diario',
 
+    # Storage no DropBox
+
 ]
 
 MIDDLEWARE = [
@@ -143,3 +145,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 LOGOUT_REDIRECT_URL = '/'
 
 LOGIN_REDIRECT_URL = '/'
+
+#Storage do DropBox
+DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DROPBOX_OAUTH2_TOKEN = config('DROPBOX_OAUTH2_TOKEN')
+DROPBOX_ROOT_PATH = '/files'
