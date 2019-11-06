@@ -21,11 +21,9 @@
             </div>
         </div>
     </div>
-    <div class="main">
-        <!-- Section Lightbox -->
-        <section class="gallery-block compact-gallery">
+        <section class="mt-4">
             <div class="container">
-                <div class="form-group pt-2">
+                <div class="pt-2 col-md-6 mx-auto">
                     <span class="h2 d-flex justify-content-center">Lista de Álbuns</span>
                     {% if user.is_authenticated %}
                         {% if albuns %}
@@ -56,16 +54,5 @@
                 </div>
             </div>
         </section>
-    </div>
 </div>
-
-<!-- end LIght box -->
-</div>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-<script>
-        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
-    </script>
 {% endblock %}

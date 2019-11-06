@@ -2,9 +2,6 @@
 {% load static %}
 {% block title %} Álbuns {% endblock %}
 {% block main %}
-<link type="javascript/js" href="{% static 'js/lightbox.js' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-<link rel="stylesheet" href="{% static 'css/compact-gallery.css' %}">
 <div class="wrapper">
     <div class="page-header clear-filter" filter-color="pink">
         <div class="page-header-image" id="sofia" data-parallax="true"
@@ -13,34 +10,40 @@
         <div class="container">
             <div class="content-center brand">
                 <h1 class="title">Sofia</h1>
-                <h4 class="">Filha amada da mamãe Gabriela</h4>
+                <h4 class="">Filha amada da mamãe {{ user.username }}</h4>
             </div>
         </div>
     </div>
-    <div class="main">
-        <!-- Section Lightbox -->
-        <section class="gallery-block compact-gallery">
-            <div class="container">
-                <h2 class="h2"> {{ object.titulo }}</h2><br>
-                <h3>{{ object.get_mes_display }}</h3>
+    <section class="lightbox">
+        <div class="mt-4 mb-5 p-4">
+            <section class="text-center">
+                <div class="container">
+                    <h2 class="h2 "> {{ object.titulo }}</h2><br>
+                    <h3 class="">{{ object.get_mes_display }}</h3>
 
-                {% for imagem in imagens.all %}
-                    <p>Título: {{ imagem.titulo }}</p>
-                    <p>Descricao: {{ imagem.descricao }}</p>
-                    <img src="{{ imagem.imagem.url }}">
-                {% endfor %}
-            </div>
-    </div>
+                    <div class="row">
+                        {% for imagem in imagens.all %}
+                        <div class="col-sm-12 col-md-4 col-lg-3 pt-2">
+                            <div class="card p-0">
+
+                                <img src="{{ imagem.imagem.url }}" class="card-img"
+                                     style="-webkit-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);">
+
+                                <div class="card-img-overlay" style="top: unset !important">
+                                    <div style="background-color: #00000073; border-radius: 5px;">
+                                    <h5 class="card-title text-white font-weight-bolder">{{ imagem.titulo }}</h5>
+                                    <p class="card-text text-white font-weight-normal">{{ imagem.descricao }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+        </div>
+    </section>
 </div>
-</section>
 
-<!-- end LIght box -->
-</div>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-<script>
-        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
-    </script>
 {% endblock %}
