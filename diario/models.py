@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -34,7 +35,7 @@ class Album(models.Model):
     mes = models.CharField(choices=MESES, default=JANEIRO, max_length=3)
     titulo = models.CharField(max_length=100, null=False, blank=False)
     descricao = models.CharField(max_length=300, null=False, blank=False)
-    usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
     verbose_name_plural = 'Álbuns'
 
