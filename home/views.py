@@ -1,3 +1,5 @@
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from django.views.generic.base import TemplateView
 
 
@@ -14,3 +16,8 @@ class Index(TemplateView):
 class Profile(TemplateView):
 
     template_name = "home/profile-page.html"
+
+
+class Login(LoginView):
+
+    template_name = "home/registration/login.html"

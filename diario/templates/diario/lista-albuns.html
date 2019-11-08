@@ -21,38 +21,95 @@
             </div>
         </div>
     </div>
-        <section class="mt-4">
-            <div class="container">
-                <div class="pt-2 col-md-6 mx-auto">
-                    <span class="h2 d-flex justify-content-center">Lista de Álbuns</span>
-                    {% if user.is_authenticated %}
-                        {% if albuns %}
+    <section class="m-4 p-2">
+        <div class="container text-center">
+            <div class="col-md-12 mx-auto">
+                <h2 class="h2">Lista de Álbuns</h2>
+                {% if user.is_authenticated %}
+                {% if albuns %}
+                {% for album in albuns %}
+                <a class="h4 btn btn-outline-primary" href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo }} - {{ album.get_mes_display }}</a>
+                {% endfor %}
+                {% else %}
+                <p class="h3">Nao existem albuns para exibiçao</p>
+                {% endif %}
+                {% else %}
+                <div class="m-2">
+                    <h3 class="text-danger">Registre-se e efetue o loggin para criar e vizualizar seus os álbuns, assim:</h3>
+                    <h3 class=""> tituloalbum</h3>
+                    <h4 class="">Janeiro</h4>
 
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Título</th>
-                                <th scope="col">Mês</th>
-                            </tr>
-                            </thead>
+                    <div class="row">
 
-                            <tbody>
-                            {% for album in albuns %}
-                            <tr>
-                                <td><a href="{% url 'diario:album_detail' album.pk %}">{{ album.titulo }}</a></td>
-                                <td>{{ album.mes }}</td>
-                            </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                        {% else %}
-                        <p class="h3">Nao existem albuns para exibiçao</p>
-                        {% endif %}
-                    {% else %}
-                    <span class="text-danger h4">*Efetue o loggin para vizualizar seus os álbuns</span>
-                    {% endif %}
+                        <div class="col-sm-12 col-md-4 col-lg-3 pt-2">
+                            <div class="card p-0">
+
+                                <img src="/media/imagens_album/photo_2019-09-08_08-41-55.jpg" class="card-img" style="-webkit-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);">
+
+                                <div class="card-img-overlay" style="top: unset !important">
+                                    <div style="background-color: #00000073; border-radius: 5px;">
+                                        <h5 class="card-title text-white font-weight-bolder">Algum título</h5>
+                                        <p class="card-text text-white font-weight-normal">Alguma descrição</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 col-lg-3 pt-2">
+                            <div class="card p-0">
+
+                                <img src="/media/imagens_album/photo_2019-09-08_08-41-55_PQ1UXld.jpg" class="card-img" style="-webkit-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);">
+
+                                <div class="card-img-overlay" style="top: unset !important">
+                                    <div style="background-color: #00000073; border-radius: 5px;">
+                                        <h5 class="card-title text-white font-weight-bolder">Algum título</h5>
+                                        <p class="card-text text-white font-weight-normal">Alguma descrição</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 col-lg-3 pt-2">
+                            <div class="card p-0">
+
+                                <img src="/media/imagens_album/photo_2019-09-08_08-41-55_JWQqNdr.jpg" class="card-img" style="-webkit-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);">
+
+                                <div class="card-img-overlay" style="top: unset !important">
+                                    <div style="background-color: #00000073; border-radius: 5px;">
+                                        <h5 class="card-title text-white font-weight-bolder">Algum título</h5>
+                                        <p class="card-text text-white font-weight-normal">Alguma descrição</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4 col-lg-3 pt-2">
+                            <div class="card p-0">
+
+                                <img src="/media/imagens_album/photo_2019-08-01_17-48-03.jpg" class="card-img" style="-webkit-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);
+                                        box-shadow: 10px 10px 31px 5px rgba(0,0,0,0.75);">
+
+                                <div class="card-img-overlay" style="top: unset !important">
+                                    <div style="background-color: #00000073; border-radius: 5px;">
+                                        <h5 class="card-title text-white font-weight-bolder">Algum título</h5>
+                                        <p class="card-text text-white font-weight-normal">Alguma descrição</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+                {% endif %}
             </div>
-        </section>
+        </div>
+    </section>
 </div>
 {% endblock %}

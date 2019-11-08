@@ -1,0 +1,51 @@
+{% extends 'base-ui.html' %}
+{% load static %}
+{% block title %} Álbuns {% endblock %}
+{% block main %}
+
+<div class="wrapper">
+    <div class="page-header clear-filter" filter-color="pink">
+        <div class="page-header-image" id="sofia" data-parallax="true"
+             style="background-image:url({% static 'assets/img/sofia/photo_2018-05-13_11-32-17.jpg' %});">
+        </div>
+        <section>
+            <div class="container"
+                 style="margin-top: 8%; margin-bottom: 50px;">
+                <div class="col-md-4 ml-auto mr-auto">
+                    <div class="card card-plain">
+                        <form class="form" method="post" action="{% url 'home:login' %}" autocomplete="off">
+                            {% csrf_token%}
+                            <div class="card-header">
+                                <div class="">
+                                    <img class="rounded-circle shadow" style="max-height: 300px;"
+                                         src="{% static 'assets/img/sofia/photo_2019-01-29_19-58-03.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="card-body mt-2">
+                                <div class="form-group" >
+                                    <label class="fas fa-user text-white"></label>
+                                    <input name="username" type="text" placeholder="Usuário..." class="font-weight-bold form-control">
+                                </div>
+                                <div class="form-group" >
+                                    <label class="fas fa-lock text-white"></label>
+                                    <input name="password" type="password" placeholder="Senha..." class="font-weight-bold form-control">
+                                </div>
+                                <button type="submit"    class="btn btn-primary btn-round btn-lg">Entrar</button>
+                            </div>
+                            <div class="">
+                                <div class="pull-left">
+                                    <h6><a href="" class="btn btn-link font-weight-bold text-white">Registre-se</a></h6>
+                                </div>
+                                <div class="pull-right">
+                                    <h6><a href="" class="btn btn-link font-weight-bold text-white">Precisa de ajuda?</a></h6>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}
