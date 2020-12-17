@@ -15,7 +15,7 @@ Pillow==7.1.2
 pylint==2.5.3
 python-decouple==3.3
 pytz==2020.1
-requests==2.23.0
+requests==2.25.1
 six==1.15.0
 sqlparse==0.3.1
 static3==0.7.0
