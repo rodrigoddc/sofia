@@ -19,7 +19,7 @@ requests==2.23.0
 six==1.15.0
 sqlparse==0.3.1
 static3==0.7.0
-typed-ast==1.4.1
+typed-ast==1.4.2
 urllib3==1.25.9
 users==1.0.dev0
 wrapt==1.12.1
